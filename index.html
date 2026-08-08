@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Meva Mix 🍓</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+     NAVBAR
+====================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Meva <span>Mix</span> 🍓
+    </div>
+
+
+    <nav>
+
+        <a href="#bosh">Bosh sahifa</a>
+
+        <a href="#mevalar">Mevalar</a>
+
+        <a href="#biz-haqimizda">
+            Biz haqimizda
+        </a>
+
+        <a href="#promo">
+            Promokod
+        </a>
+
+    </nav>
+
+
+    <button
+        class="nav-button"
+        onclick="toggleCart()"
+    >
+        🛒 Savatcha
+    </button>
+
+</header>
+
+
+
+<!-- ======================================
+     HERO
+====================================== -->
+
+<section
+    class="hero"
+    id="bosh"
+>
+
+
+    <div class="hero-text">
+
+        <span class="hero-small">
+            TABIIY • YANGI • MAZALI
+        </span>
+
+
+        <h1>
+
+            Har kuni
+            <span>yangi meva.</span>
+
+        </h1>
+
+
+        <p>
+
+            Meva Mix — eng sara va yangi
+            mevalarni bir joyga jamlagan
+            zamonaviy meva do‘koni.
+
+            Mazali, tabiiy va sifatli
+            mevalar siz uchun.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="main-button"
+                onclick="showFruits()"
+            >
+
+                Mevalarni ko‘rish 🍓
+
+            </button>
+
+
+            <a
+                href="#biz-haqimizda"
+                class="second-button"
+            >
+
+                Biz haqimizda →
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HERO IMAGE -->
+
+    <div class="hero-visual">
+
+        <div class="hero-circle"></div>
+
+
+        <div class="hero-main-fruit">
+
+            <img
+                class="hero-fruit"
+                src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=900&q=85"
+                alt="Yangi mevalar"
+            >
+
+        </div>
+
+
+        <div class="mini-fruit mini-one">
+            🍓
+        </div>
+
+
+        <div class="mini-fruit mini-two">
+            🍊
+        </div>
+
+
+        <div class="mini-fruit mini-three">
+            🍌
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     STATS
+====================================== -->
+
+<section class="stats">
+
+
+    <div class="stat">
+
+        <strong>100%</strong>
+
+        <span>
+            Tabiiy mahsulot
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>20+</strong>
+
+        <span>
+            Meva turi
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>100+</strong>
+
+        <span>
+            Mamnun mijoz
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>24/7</strong>
+
+        <span>
+            Xizmat
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     FRUITS
+====================================== -->
+
+<section
+    class="fruit-section"
+    id="mevalar"
+>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <small>
+                BIZNING MEVALAR
+            </small>
+
+
+            <h2>
+                Eng yangi
+                <span>mevalar.</span>
+            </h2>
+
+        </div>
+
+
+        <button
+            onclick="showFruits()"
+        >
+
+            Barchasini ko‘rish →
+
+        </button>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="fruit-tools">
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Meva qidiring..."
+            oninput="searchFruits()"
+        >
+
+
+        <button
+            class="category active"
+            onclick="
+                filterFruits(
+                    'all',
+                    this
+                )
+            "
+        >
+
+            Barchasi
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="
+                filterFruits(
+                    'tropik',
+                    this
+                )
+            "
+        >
+
+            🥭 Tropik
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="
+                filterFruits(
+                    'rezavor',
+                    this
+                )
+            "
+        >
+
+            🍓 Rezavor
+
+        </button>
+
+
+        <button
+            class="category"
+            onclick="
+                filterFruits(
+                    'klassik',
+                    this
+                )
+            "
+        >
+
+            🍎 Klassik
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================
+         FRUIT GRID
+    ================================== -->
+
+    <div class="fruit-grid">
+
+
+
+        <!-- OLMA -->
+
+        <article
+            class="fruit-item"
+            data-name="Qizil olma"
+            data-category="klassik"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=900&q=85"
+                    alt="Qizil olma"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    KLASSIK
+                </span>
+
+
+                <h3>
+                    Qizil olma 🍎
+                </h3>
+
+
+                <p>
+                    Shirali va mazali yangi
+                    qizil olma.
+                </p>
+
+
+                <strong>
+                   25 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Qizil olma'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- BANAN -->
+
+        <article
+            class="fruit-item"
+            data-name="Banan"
+            data-category="tropik"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=900&q=85"
+                    alt="Banan"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    TROPIK
+                </span>
+
+
+                <h3>
+                    Banan 🍌
+                </h3>
+
+
+                <p>
+                    Yumshoq, shirin va
+                    mazali banan.
+                </p>
+
+
+                <strong>
+                    30 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Banan'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- APELSIN -->
+
+        <article
+            class="fruit-item"
+            data-name="Apelsin"
+            data-category="klassik"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1547514701-42782101795e?auto=format&fit=crop&w=900&q=85"
+                    alt="Apelsin"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    KLASSIK
+                </span>
+
+
+                <h3>
+                    Apelsin 🍊
+                </h3>
+
+
+                <p>
+                    Vitaminlarga boy,
+                    suvli apelsin.
+                </p>
+
+
+                <strong>
+                    45 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Apelsin'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- QULUPNAY -->
+
+        <article
+            class="fruit-item"
+            data-name="Qulupnay"
+            data-category="rezavor"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=85"
+                    alt="Qulupnay"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    REZAVOR
+                </span>
+
+
+                <h3>
+                    Qulupnay 🍓
+                </h3>
+
+
+                <p>
+                    Xushbo‘y va shirin
+                    yangi qulupnay.
+                </p>
+
+
+                <strong>
+                    50 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Qulupnay'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- UZUM -->
+
+        <article
+            class="fruit-item"
+            data-name="Uzum"
+            data-category="rezavor"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1537640538966-79f369143f8f?auto=format&fit=crop&w=900&q=85"
+                    alt="Uzum"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    REZAVOR
+                </span>
+
+
+                <h3>
+                    Uzum 🍇
+                </h3>
+
+
+                <p>
+                    Shirin va shirali
+                    uzum donalari.
+                </p>
+
+
+                <strong>
+                    47 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Uzum'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MANGO -->
+
+        <article
+            class="fruit-item"
+            data-name="Mango"
+            data-category="tropik"
+        >
+
+            <div class="fruit-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=900&q=85"
+                    alt="Mango"
+                >
+
+            </div>
+
+
+            <div class="fruit-info">
+
+                <span class="fruit-tag">
+                    TROPIK
+                </span>
+
+
+                <h3>
+                    Mango 🥭
+                </h3>
+
+
+                <p>
+                    Yumshoq va shirin
+                    tropik mango.
+                </p>
+
+
+                <strong>
+                    35 000 so‘m
+                </strong>
+
+
+                <button
+                    onclick="
+                        addToCart(
+                            'Mango'
+                        )
+                    "
+                >
+
+                    🛒 Savatchaga qo‘shish
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     ABOUT
+====================================== -->
+
+<section
+    class="about"
+    id="biz-haqimizda"
+>
+
+
+    <div class="about-visual">
+
+        <img
+            src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1000&q=85"
+            alt="Yangi mevalar"
+        >
+
+    </div>
+
+
+
+    <div class="about-text">
+
+        <small>
+            MEVA MIX HAQIDA
+        </small>
+
+
+        <h2>
+
+            Meva tanlash
+            <span>
+                endi oson.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Biz har kuni eng sifatli
+            va yangi mevalarni tanlab,
+            sizga yetkazishga harakat
+            qilamiz.
+
+            Meva Mix bilan foydali
+            va mazali tanlov qiling.
+
+        </p>
+
+
+        <div class="about-list">
+
+            <div>
+                🍎 Yangi mevalar
+            </div>
+
+            <div>
+                🌱 Tabiiy mahsulot
+            </div>
+
+            <div>
+                🚚 Tez xizmat
+            </div>
+
+            <div>
+                ❤️ Sifat kafolati
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     PROMO
+====================================== -->
+
+<section
+    class="promo"
+    id="promo"
+>
+
+
+    <div class="promo-content">
+
+        <div class="promo-icon">
+            🎁
+        </div>
+
+
+        <small>
+            MAXSUS TAKLIF
+        </small>
+
+
+        <h2>
+
+            10% chegirma
+            <span>
+                oling!
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Promokodni kiriting va
+            buyurtmangiz uchun
+            10% chegirmaga ega bo‘ling.
+
+        </p>
+
+
+
+        <div class="promo-box">
+
+            <input
+                type="text"
+                id="promoInput"
+                placeholder="Promokodni kiriting"
+            >
+
+
+            <button
+                onclick="checkPromo()"
+            >
+
+                Tekshirish
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="promoResult"
+        ></div>
+
+
+        <div class="promo-code">
+
+            MEVAMIX10
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================
+     CART BUTTON
+====================================== -->
+
+<button
+    class="cart-button"
+    onclick="toggleCart()"
+>
+
+    🛒
+
+    <span id="cartCount">
+        0
+    </span>
+
+</button>
+
+
+
+<!-- ======================================
+     CART OVERLAY
+====================================== -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="toggleCart()"
+></div>
+
+
+
+<!-- ======================================
+     CART PANEL
+====================================== -->
+
+<aside
+    class="cart-panel"
+    id="cartPanel"
+>
+
+
+    <div class="cart-header">
+
+        <div>
+
+            <span>
+                🛒
+            </span>
+
+            <h2>
+                Savatcha
+            </h2>
+
+        </div>
+
+
+        <button
+            onclick="toggleCart()"
+        >
+
+            ✕
+
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+
+        <div class="empty-cart">
+
+            <div>
+                🛒
+            </div>
+
+            <h3>
+                Savatcha bo‘sh
+            </h3>
+
+            <p>
+                Mevalardan birortasini
+                tanlang 🍎
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="cart-footer">
+
+
+        <div class="cart-total">
+
+            <span>
+                Jami:
+            </span>
+
+            <strong id="cartTotal">
+                0 so‘m
+            </strong>
+
+        </div>
+
+
+        <button
+            class="checkout-button"
+            onclick="checkout()"
+        >
+
+            Buyurtma berish 🎉
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        Meva <span>Mix</span> 🍓
+
+    </div>
+
+
+    <p>
+
+        Har kuni yangi meva,
+        har kuni yaxshi kayfiyat! ❤️
+
+    </p>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Meva Mix.
+        Barcha huquqlar himoyalangan.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
