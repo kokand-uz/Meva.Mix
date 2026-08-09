@@ -2,8 +2,9 @@
 // 🍓 MEVA MIX — JAVASCRIPT
 // ========================================
 
-let cart = [];
+"use strict";
 
+let cart = [];
 let promoApplied = false;
 
 const DISCOUNT = 0.10;
@@ -15,30 +16,187 @@ const DISCOUNT = 0.10;
 
 const fruits = {
 
-    "Qizil olma": {
-        price: 25000
+    "Tarvuz": {
+        price: 5000,
+        category: "klassik",
+        emoji: "🍉",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRMWXWApMZsUKyXRouCHBDaEeL-0NdziBktOrifCL4Q&s=10"
     },
 
-    "Banan": {
-        price: 30000
-    },
-
-    "Apelsin": {
-        price: 45000
-    },
-
-    "Qulupnay": {
-        price: 50000
-    },
-
-    "Uzum": {
-        price: 47000
+    "Qovun": {
+        price: 8000,
+        category: "klassik",
+        emoji: "🍈",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu7iA8wpKFdV_QnszJMcnXCzTtl30_lHP7JfFnlk0zBw&s=10"
     },
 
     "Mango": {
-        price: 35000
-    }
+        price: 20000,
+        category: "tropik",
+        emoji: "🥭",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjT2qz47DyLPskoSqjP4e25XaTOFrR0T_2arr0RGE6EA&s=10"
+    },
 
+    "Dragon Fruit": {
+        price: 25000,
+        category: "tropik",
+        emoji: "🐉",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaYz0JuWmpTrCb5LJp-ulVr31CFn54fgg7hPDYyS0cPw&s=10"
+    },
+
+    "Shaftoli": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🍑",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa-VJcD3chazgyn7NApZGdFdk8sOqrYPMQ0duWALqTcg&s=10"
+    },
+
+    "Junli Shaftoli": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🍑",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeUHOZ9Z_YNFTc7CyNjpcHcba-tfMgUYKX2eSiHjITw&s=10"
+    },
+
+    "Oq Shaftoli": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🍑",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtpAeg6r5co7Jc1SXfcfBffdLzQhTBBas5lGXtinAlMQ&s=10"
+    },
+
+    "Anjir Shaftoli": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🍑",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWDl9toWP_njEz2POLSjr_D_-nDxID5H5paOVgAt571A&s=10"
+    },
+
+    "Uzum": {
+        price: 30000,
+        category: "rezavor",
+        emoji: "🍇",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbWNKYijTYRxxCK421l1QE6xsoXEgTwd9SszRLMqP5HA&s=10"
+    },
+
+    "Apelsin": {
+        price: 30000,
+        category: "klassik",
+        emoji: "🍊",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt8PQI3eO88oJ2tnXRlejfErlfM9ID-u4TTj0eQj4wWQ&s=10"
+    },
+
+    "Yashil olma": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🍏",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqJOyD_k-I3WS4ofSU22VvnHlxya1xK_S_dRcS7H6bFQ&s=10"
+    },
+
+    "Banan": {
+        price: 20000,
+        category: "tropik",
+        emoji: "🍌",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlEU6-yDO5bpkMXwBttnGBdcSlvMlcVzzJf4emP2xfZw&s=10"
+    },
+
+    "Anjir": {
+        price: 25000,
+        category: "klassik",
+        emoji: "🫒",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSENJQOlhQssMWMw4xExeR70dsyN4_UGdIntU9_c4HvxQ&s=10"
+    },
+
+    "Nok": {
+        price: 40000,
+        category: "klassik",
+        emoji: "🍐",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrZSuAyqeB8hE6cTdW-XX_mI6eDeOSDrUpuvTLK316UA&s=10"
+    },
+
+    "Qulupnay": {
+        price: 100000,
+        category: "rezavor",
+        emoji: "🍓",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxsVa8KMfARxzv8qqHpjHqq9dlsNH0HT6Q89wygSbQg&s=10"
+    },
+
+    "Ananas": {
+        price: 50000,
+        category: "tropik",
+        emoji: "🍍",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdhRM2lYGQDQvaGK_sWcTWcti_xhVagAbVpXb76qVJig&s=10"
+    },
+
+    "Laym": {
+        price: 100000,
+        category: "tropik",
+        emoji: "🍋",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysSQz8kOMviK-TWQOVnsYvFr1aCamfzVTnldI8J7Uhv0LA4wEqHnZFJWZ&s=10"
+    },
+
+    "Limon": {
+        price: 50000,
+        category: "klassik",
+        emoji: "🍋",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtgtHP6nLidikj3DAFL2YXWAdphpsGA02gdXA3U5_fHg&s=10"
+    },
+
+    "Golubika": {
+        price: 40000,
+        category: "rezavor",
+        emoji: "🫐",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG0k0gBaom4UfNF2aujKMl7P2CD37c9qZgHp09CN4Ydw&s=10"
+    },
+
+    "Kiwi": {
+        price: 70000,
+        category: "tropik",
+        emoji: "🥝",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5K7uFHfr5ZTbd2SGOAKQOIMC_I2iJ4Sjkt9JhdQDbog&s=10"
+    },
+
+    "Ejevika": {
+        price: 70000,
+        category: "rezavor",
+        emoji: "🫐",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDSZVyW2akikaVUKK58JUtJuJDlWMbzpvvep-q588UtxWL-ZH4oDbfBIU&s=10"
+    },
+
+    "Malina": {
+        price: 100000,
+        category: "rezavor",
+        emoji: "🍓",
+        image: "https://s0.rbk.ru/v6_top_pics/media/img/5/51/756590951624515.jpeg"
+    },
+
+    "Mandarin": {
+        price: 40000,
+        category: "klassik",
+        emoji: "🍊",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScigdaR_6LTGi0cmBFBtviUgxrbLxFPnnjSpUuw8k6UQ&s=10"
+    },
+
+    "Kokos": {
+        price: 50000,
+        category: "tropik",
+        emoji: "🥥",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUpzdbVzEUXtIQCrcNLvetAO4lww8V9dP_L-NGrl4emQ&s=10"
+    },
+
+    "Avokado": {
+        price: 30000,
+        category: "tropik",
+        emoji: "🥑",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlIb2Wt6jhFCASPdiAqjpdRxuxf4w09QVKuNes_PVLNA&s"
+    },
+
+    "Olxo‘ri": {
+        price: 10000,
+        category: "klassik",
+        emoji: "🟣",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtHcv7ESh2ODUzpUx_rrGMd6iGxFwvmqVjagQmXdu_Ag&s=10"
+    }
 };
 
 
@@ -48,27 +206,103 @@ const fruits = {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    renderFruits();
     updateCart();
-
-    startScrollAnimation();
 
 });
 
 
 // ========================================
-// 🍓 MEVALARNI KO‘RISH
+// 🍓 MEVALARNI CHIQARISH
 // ========================================
 
-function showFruits() {
+function renderFruits() {
 
-    const section =
-        document.getElementById("mevalar");
+    const grid =
+        document.getElementById("fruitGrid");
 
-    if (!section) return;
+    if (!grid) return;
 
-    section.scrollIntoView({
-        behavior: "smooth"
-    });
+    grid.innerHTML = "";
+
+    Object.entries(fruits).forEach(
+        ([name, fruit]) => {
+
+            const card =
+                document.createElement("article");
+
+            card.className = "fruit-item";
+
+            card.dataset.name = name;
+            card.dataset.category =
+                fruit.category;
+
+            const categoryName =
+                fruit.category === "tropik"
+                    ? "TROPIK"
+                    : fruit.category === "rezavor"
+                        ? "REZAVOR"
+                        : "KLASSIK";
+
+            card.innerHTML = `
+
+                <div class="fruit-image">
+
+                    <img
+                        src="${fruit.image}"
+                        alt="${name}"
+                        loading="lazy"
+                        onerror="
+                            this.style.display='none';
+                            this.parentElement.innerHTML=
+                            '<div style="
+                            font-size:70px;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            width:100%;
+                            height:100%;
+                            ">${fruit.emoji}</div>'
+                        "
+                    >
+
+                </div>
+
+                <div class="fruit-info">
+
+                    <span class="fruit-tag">
+                        ${categoryName}
+                    </span>
+
+                    <h3>
+                        ${name} ${fruit.emoji}
+                    </h3>
+
+                    <p>
+                        Yangi, sifatli va mazali
+                        ${name.toLowerCase()}.
+                    </p>
+
+                    <strong>
+                        ${formatPrice(fruit.price)} so‘m
+                    </strong>
+
+                    <button
+                        onclick="addToCart('${name.replace(/'/g, "\\'")}')"
+                    >
+                        🛒 Savatchaga qo‘shish
+                    </button>
+
+                </div>
+
+            `;
+
+            grid.appendChild(card);
+
+        }
+    );
+
+    startScrollAnimation();
 
 }
 
@@ -83,7 +317,6 @@ function addToCart(name) {
 
     const existing =
         cart.find(item => item.name === name);
-
 
     if (existing) {
 
@@ -103,9 +336,7 @@ function addToCart(name) {
 
     }
 
-
     updateCart();
-
 
     showMessage(
         "🛒",
@@ -113,10 +344,8 @@ function addToCart(name) {
         "Savatchaga qo‘shildi!"
     );
 
-
     const button =
         document.querySelector(".cart-button");
-
 
     if (button) {
 
@@ -150,18 +379,14 @@ function updateCart() {
     const cartTotal =
         document.getElementById("cartTotal");
 
-
     if (
         !cartItems ||
         !cartCount ||
         !cartTotal
     ) return;
 
-
     let count = 0;
-
     let subtotal = 0;
-
 
     cart.forEach(item => {
 
@@ -173,47 +398,32 @@ function updateCart() {
 
     });
 
-
-    // ====================================
-    // 💰 10% CHEGIRMA
-    // ====================================
-
     let discount = 0;
-
-    let total = subtotal;
-
 
     if (promoApplied) {
 
         discount =
             subtotal * DISCOUNT;
 
-        total =
-            subtotal - discount;
-
     }
 
-
-    // ====================================
-    // 🛒 COUNT
-    // ====================================
+    const total =
+        subtotal - discount;
 
     cartCount.textContent = count;
 
-
-    // ====================================
-    // 💰 TOTAL
-    // ====================================
-
-    if (promoApplied && subtotal > 0) {
+    if (
+        promoApplied &&
+        subtotal > 0
+    ) {
 
         cartTotal.innerHTML = `
 
             <span
                 style="
-                    text-decoration: line-through;
-                    opacity: 0.5;
-                    margin-right: 8px;
+                    text-decoration:line-through;
+                    opacity:.5;
+                    margin-right:8px;
                 "
             >
                 ${formatPrice(subtotal)} so‘m
@@ -234,19 +444,13 @@ function updateCart() {
     }
 
 
-    // ====================================
-    // 🛒 SAVATCHA BO‘SH
-    // ====================================
-
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
 
             <div class="empty-cart">
 
-                <div>
-                    🛒
-                </div>
+                <div>🛒</div>
 
                 <h3>
                     Savatcha bo‘sh
@@ -269,25 +473,20 @@ function updateCart() {
     cartItems.innerHTML = "";
 
 
-    // ====================================
-    // 🍎 CART ITEMS
-    // ====================================
-
     cart.forEach((item, index) => {
 
         const element =
             document.createElement("div");
 
-
         element.className =
             "cart-item";
 
+        const emoji =
+            getFruitEmoji(item.name);
 
         element.innerHTML = `
 
-            <div
-                class="cart-item-image"
-            >
+            <div class="cart-item-image">
 
                 <div
                     style="
@@ -299,43 +498,32 @@ function updateCart() {
                         font-size:32px;
                     "
                 >
-                    ${getFruitEmoji(item.name)}
+                    ${emoji}
                 </div>
 
             </div>
 
-
-            <div
-                class="cart-item-info"
-            >
+            <div class="cart-item-info">
 
                 <h4>
                     ${item.name}
                 </h4>
 
-
                 <p>
-
                     ${formatPrice(item.price)}
-                    so‘m ×
-                    ${item.quantity}
-
+                    so‘m × ${item.quantity}
                 </p>
 
             </div>
 
-
             <button
                 class="remove-item"
-                onclick="
-                    removeFromCart(${index})
-                "
+                onclick="removeFromCart(${index})"
             >
                 🗑️
             </button>
 
         `;
-
 
         cartItems.appendChild(element);
 
@@ -345,35 +533,18 @@ function updateCart() {
 
 
 // ========================================
-// 🍎 MEVA EMOJISI
+// 🍎 EMOJI
 // ========================================
 
 function getFruitEmoji(name) {
 
-    const emojis = {
-
-        "Qizil olma": "🍎",
-
-        "Banan": "🍌",
-
-        "Apelsin": "🍊",
-
-        "Qulupnay": "🍓",
-
-        "Uzum": "🍇",
-
-        "Mango": "🥭"
-
-    };
-
-
-    return emojis[name] || "🍓";
+    return fruits[name]?.emoji || "🍓";
 
 }
 
 
 // ========================================
-// 💰 NARX FORMAT
+// 💰 NARX
 // ========================================
 
 function formatPrice(number) {
@@ -385,7 +556,7 @@ function formatPrice(number) {
 
 
 // ========================================
-// 🗑️ O‘CHIRISH
+// 🗑️ SAVATCHADAN O‘CHIRISH
 // ========================================
 
 function removeFromCart(index) {
@@ -395,16 +566,12 @@ function removeFromCart(index) {
         index >= cart.length
     ) return;
 
-
     const removed =
         cart[index].name;
 
-
     cart.splice(index, 1);
 
-
     updateCart();
-
 
     showMessage(
         "🗑️",
@@ -422,34 +589,22 @@ function removeFromCart(index) {
 function toggleCart() {
 
     const panel =
-        document.getElementById(
-            "cartPanel"
-        );
-
+        document.getElementById("cartPanel");
 
     const overlay =
-        document.getElementById(
-            "cartOverlay"
-        );
-
+        document.getElementById("cartOverlay");
 
     if (!panel || !overlay) return;
 
+    panel.classList.toggle("active");
 
-    panel.classList.toggle(
-        "active"
-    );
-
-
-    overlay.classList.toggle(
-        "active"
-    );
+    overlay.classList.toggle("active");
 
 }
 
 
 // ========================================
-// 🎉 BUYURTMA
+// 🎉 BUYURTMA FORMASI
 // ========================================
 
 function checkout() {
@@ -464,9 +619,202 @@ function checkout() {
 
     }
 
+    if (
+        document.getElementById(
+            "orderModal"
+        )
+    ) return;
+
+
+    const modal =
+        document.createElement("div");
+
+    modal.id =
+        "orderModal";
+
+
+    modal.innerHTML = `
+
+        <div
+            class="order-modal-overlay"
+            onclick="closeOrderModal()"
+        ></div>
+
+
+        <div class="order-modal">
+
+            <button
+                class="order-close"
+                onclick="closeOrderModal()"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <div class="order-icon">
+                🍓
+            </div>
+
+
+            <h2>
+                Buyurtma berish
+            </h2>
+
+
+            <p class="order-subtitle">
+                Yetkazib berish ma’lumotlarini kiriting
+            </p>
+
+
+            <form id="orderForm">
+
+
+                <label>
+                    👤 Ism-familiya
+                </label>
+
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Ism va familiyangiz"
+                    required
+                >
+
+
+                <label>
+                    📞 Telefon raqami
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="+998 90 123 45 67"
+                    required
+                >
+
+
+                <label>
+                    📍 Yetkazib berish manzili
+                </label>
+
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Viloyat, shahar/tuman, ko‘cha, uy..."
+                    rows="3"
+                    required
+                ></textarea>
+
+
+                <label>
+                    💬 Qo‘shimcha izoh
+                    <span>
+                        (ixtiyoriy)
+                    </span>
+                </label>
+
+
+                <textarea
+                    id="customerComment"
+                    placeholder="Masalan: eshik oldiga qoldiring..."
+                    rows="2"
+                ></textarea>
+
+
+                <div class="order-summary">
+
+                    <div>
+
+                        <span>
+                            Mahsulotlar:
+                        </span>
+
+                        <strong>
+                            ${getCartCount()} ta
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Jami:
+                        </span>
+
+                        <strong>
+                            ${getCartTotal()} so‘m
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="confirm-order-button"
+                >
+                    ✅ Buyurtmani tasdiqlash
+                </button>
+
+
+            </form>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    setTimeout(() => {
+
+        modal.classList.add("show");
+
+    }, 20);
+
+
+    document
+        .getElementById("orderForm")
+        .addEventListener(
+            "submit",
+            submitOrder
+        );
+
+}
+
+
+// ========================================
+// 🔢 MAHSULOTLAR SONI
+// ========================================
+
+function getCartCount() {
+
+    let count = 0;
+
+    cart.forEach(item => {
+
+        count += item.quantity;
+
+    });
+
+    return count;
+
+}
+
+
+// ========================================
+// 💰 SAVATCHA JAMI
+// ========================================
+
+function getCartTotal() {
 
     let subtotal = 0;
-
 
     cart.forEach(item => {
 
@@ -479,7 +827,6 @@ function checkout() {
 
     let discount = 0;
 
-
     if (promoApplied) {
 
         discount =
@@ -488,54 +835,196 @@ function checkout() {
     }
 
 
-    const total =
-        subtotal - discount;
+    return formatPrice(
+        subtotal - discount
+    );
+
+}
 
 
-    let message =
-        "🎉 Buyurtmangiz qabul qilindi!\n\n";
+// ========================================
+// ❌ BUYURTMA OYNASINI YOPISH
+// ========================================
+
+function closeOrderModal() {
+
+    const modal =
+        document.getElementById(
+            "orderModal"
+        );
+
+    if (!modal) return;
+
+    modal.classList.remove("show");
+
+    setTimeout(() => {
+
+        modal.remove();
+
+    }, 250);
+
+}
 
 
-    if (promoApplied) {
+// ========================================
+// 📦 BUYURTMA YUBORISH
+// ========================================
 
-        message +=
-            "Asl narx: " +
-            formatPrice(subtotal) +
-            " so‘m\n";
+function submitOrder(event) {
 
-        message +=
-            "🎟️ Chegirma: 10%\n";
+    event.preventDefault();
 
-        message +=
-            "💚 Tejadingiz: " +
-            formatPrice(discount) +
-            " so‘m\n";
+
+    const name =
+        document
+            .getElementById(
+                "customerName"
+            )
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById(
+                "customerPhone"
+            )
+            .value
+            .trim();
+
+
+    const address =
+        document
+            .getElementById(
+                "customerAddress"
+            )
+            .value
+            .trim();
+
+
+    const comment =
+        document
+            .getElementById(
+                "customerComment"
+            )
+            .value
+            .trim();
+
+
+    if (
+        !name ||
+        !phone ||
+        !address
+    ) {
+
+        alert(
+            "⚠️ Ism, telefon va manzilni kiriting!"
+        );
+
+        return;
 
     }
 
 
-    message +=
-        "Jami: " +
+    let subtotal = 0;
+
+    cart.forEach(item => {
+
+        subtotal +=
+            item.price *
+            item.quantity;
+
+    });
+
+
+    const discount =
+        promoApplied
+            ? subtotal * DISCOUNT
+            : 0;
+
+
+    const total =
+        subtotal - discount;
+
+
+    const orderData = {
+
+        name: name,
+
+        phone: phone,
+
+        address: address,
+
+        comment: comment,
+
+        products: cart.map(item => ({
+
+            name: item.name,
+
+            quantity: item.quantity,
+
+            price: item.price,
+
+            total:
+                item.price *
+                item.quantity
+
+        })),
+
+        subtotal: subtotal,
+
+        discount: discount,
+
+        total: total,
+
+        promo:
+            promoApplied
+                ? "MEVAMIX10"
+                : "",
+
+        date:
+            new Date()
+                .toLocaleString(
+                    "uz-UZ"
+                )
+
+    };
+
+
+    console.log(
+        "🍓 YANGI BUYURTMA:",
+        orderData
+    );
+
+
+    alert(
+        "✅ Buyurtmangiz qabul qilindi!\n\n" +
+
+        "👤 " +
+        name +
+        "\n" +
+
+        "📞 " +
+        phone +
+        "\n" +
+
+        "📍 " +
+        address +
+        "\n\n" +
+
+        "💰 Jami: " +
         formatPrice(total) +
-        " so‘m\n\n";
-
-
-    message +=
-        "🍓 Meva Mix sizga rahmat aytadi!";
-
-
-    alert(message);
+        " so‘m"
+    );
 
 
     cart = [];
 
     promoApplied = false;
 
-
     updateCart();
 
-
-    toggleCart();
+    closeOrderModal();
 
 }
 
@@ -550,7 +1039,6 @@ function searchFruits() {
         document.getElementById(
             "searchInput"
         );
-
 
     if (!input) return;
 
@@ -663,7 +1151,7 @@ function filterFruits(
 
 
 // ========================================
-// 🎟️ PROMOKOD — 10% CHEGIRMA
+// 🎟️ PROMOKOD
 // ========================================
 
 function checkPromo() {
@@ -689,26 +1177,17 @@ function checkPromo() {
             .toUpperCase();
 
 
-    // ====================================
-    // 🎉 TO‘G‘RI PROMOKOD
-    // ====================================
-
-    if (code === "MEVAMIX10") {
+    if (
+        code === "MEVAMIX10"
+    ) {
 
 
         if (promoApplied) {
 
             result.innerHTML = `
-
                 ℹ️ <strong>
                 Promokod allaqachon ishlatilgan!
                 </strong>
-
-                <br>
-
-                10% chegirma savatchada
-                hisoblangan.
-
             `;
 
             result.className =
@@ -720,7 +1199,6 @@ function checkPromo() {
 
 
         promoApplied = true;
-
 
         updateCart();
 
@@ -735,7 +1213,9 @@ function checkPromo() {
 
             Savatchadagi barcha
             mahsulotlarga
-            <strong>10% chegirma</strong>
+            <strong>
+                10% chegirma
+            </strong>
             berildi! 🍓
 
         `;
@@ -760,38 +1240,21 @@ function checkPromo() {
     }
 
 
-    // ====================================
-    // ⚠️ BO‘SH
-    // ====================================
-
     if (code === "") {
 
-        result.innerHTML = `
-
-            ⚠️ Promokodni kiriting.
-
-        `;
-
+        result.innerHTML =
+            "⚠️ Promokodni kiriting.";
 
         result.className =
             "promo-error";
-
 
         return;
 
     }
 
 
-    // ====================================
-    // ❌ NOTO‘G‘RI
-    // ====================================
-
-    result.innerHTML = `
-
-        ❌ Promokod noto‘g‘ri.
-
-    `;
-
+    result.innerHTML =
+        "❌ Promokod noto‘g‘ri.";
 
     result.className =
         "promo-error";
@@ -810,7 +1273,9 @@ function showMessage(
 ) {
 
     const message =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     message.className =
@@ -823,13 +1288,11 @@ function showMessage(
             ${icon}
         </div>
 
-
         <div>
 
             <strong>
                 ${title}
             </strong>
-
 
             <p>
                 ${text}
@@ -867,6 +1330,7 @@ function showMessage(
 
         }, 500);
 
+
     }, 2500);
 
 }
@@ -882,6 +1346,23 @@ function startScrollAnimation() {
         document.querySelectorAll(
             ".fruit-item, .about-visual, .about-text, .promo-content, .stats"
         );
+
+
+    if (
+        !("IntersectionObserver" in window)
+    ) {
+
+        elements.forEach(element => {
+
+            element.classList.add(
+                "show-animation"
+            );
+
+        });
+
+        return;
+
+    }
 
 
     const observer =
@@ -987,10 +1468,7 @@ document.addEventListener(
 
 
         fruit.style.transform =
-            `
-            translate(${x}px, ${y}px)
-            scale(1.03)
-            `;
+            `translate(${x}px, ${y}px) scale(1.03)`;
 
     }
 );
@@ -1011,13 +1489,17 @@ function createFloatingFruit() {
         "🍇",
         "🥭",
         "🍍",
-        "🍉"
+        "🍉",
+        "🥝",
+        "🥑"
 
     ];
 
 
     const fruit =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     fruit.className =
@@ -1071,11 +1553,10 @@ setInterval(
 
 
 // ========================================
-// 🎮 SECRET MEVA MODE 😎
+// 🎮 SECRET MEVA MODE
 // ========================================
 
 let secretKeys = [];
-
 
 const secretCode = [
     "m",
@@ -1165,3 +1646,25 @@ document.addEventListener(
 
     }
 );
+
+
+// ========================================
+// 🔄 MEVALARNI KO‘RSATISH
+// ========================================
+
+function showFruits() {
+
+    const section =
+        document.getElementById(
+            "mevalar"
+        );
+
+
+    if (!section) return;
+
+
+    section.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
