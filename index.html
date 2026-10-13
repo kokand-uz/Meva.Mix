@@ -1,126 +1,96 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#123b2c">
-    <meta name="description" content="Meva Mix — har kuni yangi mevalar, shirinliklar va ichimliklar. Buyurtma bering!">
-    <title>Meva Mix 🍓 — Tabiatning eng mazali tomoni</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --green: #123b2c;
-            --green2: #1c5b40;
-            --lime: #d9f36a;
-            --cream: #f7f6ef;
-            --ink: #17231d;
-            --muted: #737d75;
-            --line: #e5e8df;
-            --white: #fff;
-            --orange: #ff8758;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            background: var(--cream);
-            color: var(--ink);
-            font-family: "DM Sans", sans-serif;
-        }
-        button, input, textarea, select {
-            font: inherit;
-        }
-        button {
-            cursor: pointer;
-        }
-        .wrap {
-            width: min(1180px, calc(100% - 40px));
-            margin: auto;
-        }
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(247, 246, 239, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(18, 59, 44, 0.08);
-        }
-        .nav {
-            height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 22px;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--green);
-            font-weight: 800;
-            font-size: 23px;
-            letter-spacing: -1px;
-        }
-        .brand span {
-            color: #7b9d3a;
-        }
-        .navlinks {
-            display: flex;
-            gap: 28px;
-        }
-        .navlinks a {
-            color: #4d5b52;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .navlinks a:hover {
-            color: var(--green2);
-        }
-        .cart-btn {
-            border: 0;
-            background: var(--green);
-            color: white;
-            border-radius: 999px;
-            padding: 12px 17px;
-            font-weight: 700;
-            display: flex;
-            gap: 9px;
-            align-items: center;
-        }
-        @media (max-width: 680px) {
-            .navlinks {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#103b27">
+  <meta name="description" content="Meva Mix — yangi mevalar, yoqimli narxlar va qulay buyurtma.">
+  <title>Meva Mix — Har kuni yangi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
 </head>
 <body>
-
-<header>
-    <div class="wrap nav">
-        <a class="brand" href="#bosh">
-            Meva <span>Mix</span> 🍓
-        </a>
-        <nav class="navlinks">
-            <a href="#bosh">Bosh sahifa</a>
-            <a href="#mevalar">Mevalar</a>
-            <a href="#biz-haqimizda">Biz haqimizda</a>
-            <a href="#promo">Promokod</a>
-        </nav>
-        <button class="cart-btn" onclick="toggleCart()">
-            🛒 Savatcha
-        </button>
+  <div class="announcement">🍊 Har kuni yangi mevalar · Buyurtma berish oson</div>
+  <header class="header">
+    <a class="brand" href="#bosh" aria-label="Meva Mix bosh sahifa"><img src="/assets/meva-mix-logo.png" alt="Meva Mix logotipi"></a>
+    <nav class="nav" id="nav">
+      <a href="#bosh">Bosh sahifa</a><a href="#mevalar">Mevalar</a><a href="#afzalliklar">Biz haqimizda</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Menyu">☰</button>
+      <button class="cart-button" id="openCart"><span>🛒</span><span class="cart-label">Savatcha</span><b id="cartCount">0</b></button>
     </div>
-</header>
+  </header>
+  <main>
+    <section class="hero" id="bosh">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> TABIIYLIK HAR BIR TISHAMDA</span>
+        <h1>Yaxshiliklar<br> <em>mevadan</em> boshlanadi.</h1>
+        <p>Sevimli mevalaringiz — yangi, rang-barang va uyingizgacha. O‘zingizga yoqqanini tanlang, qolganini bizga qo‘ying.</p>
+        <div class="hero-buttons"><a class="btn btn-primary" href="#mevalar">Mevalarni ko‘rish <span>↗</span></a><div class="trust"><span class="avatars">🍓🍊🍇</span><span><b>26 xil mahsulot</b><small>Bir joyda, siz uchun</small></span></div></div>
+        <div class="hero-points"><span>✓ Yangi mahsulotlar</span><span>✓ Qulay buyurtma</span><span>✓ Tez aloqa</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <img class="hero-fruit" src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=1100&q=90" alt="Rang-barang yangi mevalar">
+        <div class="floating-note note-top"><span>🍃</span><div><b>Yangi tanlov</b><small>Har kuni</small></div></div>
+        <div class="floating-note note-bottom"><span class="note-star">✦</span><div><b>Tabiiy ta’m</b><small>Meva Mix bilan</small></div></div>
+        <div class="hero-sticker">FRESH<br><b>& HAPPY</b></div>
+      </div>
+      <div class="hero-bottom"><span>01 / MEVA MIX</span><span>YANGILIKNI HIS QILING <span class="scroll-line"></span></span></div>
+    </section>
 
+    <section class="benefits" id="afzalliklar">
+      <div class="benefit"><span class="benefit-icon">🌿</span><div><b>Yangi mahsulotlar</b><small>Har kuni yangi tanlov</small></div></div>
+      <div class="benefit"><span class="benefit-icon">🧺</span><div><b>Oson buyurtma</b><small>Bir necha bosqichda</small></div></div>
+      <div class="benefit"><span class="benefit-icon">💚</span><div><b>Siz uchun tanlov</b><small>26 xil meva va rezavor</small></div></div>
+      <div class="benefit"><span class="benefit-icon">📍</span><div><b>Manzilingizgacha</b><small>Yetkazish vaqtini tanlang</small></div></div>
+    </section>
+
+    <section class="products-section" id="mevalar">
+      <div class="section-heading"><div><span class="eyebrow">BIZNING TANLOV</span><h2>Tabiatning <em>eng mazali</em> ranglari</h2><p>Bugun nimani tatib ko‘ramiz?</p></div><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Meva qidirish..." aria-label="Meva qidirish"></div></div>
+      <div class="toolbar"><div class="categories" id="categories"><button class="category active" data-cat="all">Barchasi <span>26</span></button><button class="category" data-cat="meva">Mevalar</button><button class="category" data-cat="rezavor">Rezavorlar</button><button class="category" data-cat="tropik">Tropik</button></div><span class="results-count" id="resultsCount">26 ta mahsulot</span></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state hidden" id="emptyState">Bu nomda meva topilmadi. Boshqa so‘z bilan qidirib ko‘ring 🍐</div>
+    </section>
+
+    <section class="promo-banner" id="promo">
+      <div class="promo-copy"><span class="eyebrow">BIRINCHI BUYURTMANGIZ UCHUN</span><h2>Meva ko‘p bo‘lsa,<br><em>kayfiyat ham ko‘p!</em></h2><p>Maxsus kod bilan savatchangizga 10% chegirma qo‘shing.</p><div class="promo-code"><span id="promoCodeText">MEVAMIX10</span><button id="copyPromo">Kodni nusxalash ↗</button></div></div>
+      <div class="promo-art"><div class="promo-circle"></div><img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=900&q=85" alt="Yangi meva va rezavorlar"><span class="promo-badge">−10%<small>CHEGIRMA</small></span></div>
+    </section>
+
+    <section class="closing"><div class="closing-leaf">✳</div><span class="eyebrow">MEVA MIX — HAR KUNI YANGI</span><h2>Yaxshi kayfiyatni<br><em>savatchaga soling.</em></h2><a class="btn btn-primary" href="#mevalar">Xaridni boshlash ↗</a></section>
+  </main>
+  <footer class="footer"><a href="#bosh" class="footer-brand"><img src="/assets/meva-mix-logo.png" alt="Meva Mix"></a><p>Yangi mevalar, yaxshi kayfiyat. 🍉</p><span>© <span id="year"></span> Meva Mix. Barcha huquqlar himoyalangan.</span></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Savatcha">
+    <div class="drawer-head"><div><span class="eyebrow">SIZNING TANLOVINGIZ</span><h2>Savatcha <span id="drawerCount">(0)</span></h2></div><button class="close-btn" id="closeCart" aria-label="Yopish">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>🧺</span><h3>Savatchangiz hozircha bo‘sh</h3><p>Yoqtirgan mevalaringizni tanlab, shu yerga qo‘shing.</p><button class="btn btn-primary" id="browseBtn">Mevalarni ko‘rish</button></div>
+    <div class="cart-bottom" id="cartBottom">
+      <div class="promo-input"><input id="promoInput" placeholder="Promo-kod" aria-label="Promo-kod"><button id="applyPromo">Qo‘llash</button></div><p class="promo-message" id="promoMessage"></p>
+      <div class="summary-line"><span>Mahsulotlar jami</span><b id="subtotal">0 so‘m</b></div><div class="summary-line discount-line hidden" id="discountLine"><span>Chegirma (10%)</span><b id="discountAmount">−0 so‘m</b></div><div class="summary-total"><span>Jami</span><b id="total">0 so‘m</b></div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">Buyurtma berish <span>↗</span></button><small class="secure-note">🔒 Ma’lumotlaringiz xavfsiz yuboriladi</small>
+    </div>
+  </aside>
+
+  <div class="modal-wrap hidden" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <div class="checkout-modal"><button class="close-btn modal-close" id="closeCheckout" aria-label="Yopish">×</button><span class="eyebrow">YANA BIR QADAM</span><h2 id="checkoutTitle">Buyurtmani <em>rasmiylashtirish</em></h2><p class="modal-intro">Ma’lumotlaringizni kiriting, buyurtmangizni tayyorlaymiz.</p>
+      <form id="checkoutForm">
+        <label>Ismingiz<input name="name" required maxlength="100" placeholder="Ism familiya"></label>
+        <label>Telefon raqamingiz<input name="phone" required maxlength="40" type="tel" placeholder="+998 90 123 45 67"></label>
+        <label>Yetkazib berish manzili<textarea name="address" required maxlength="300" rows="2" placeholder="Viloyat, shahar, ko‘cha, uy"></textarea></label>
+        <label>Yetkazish vaqti<select name="deliveryTime"><option>Imkon qadar tezroq</option><option>Bugun, tushdan oldin</option><option>Bugun, tushdan keyin</option><option>Vaqtni telefon orqali kelishamiz</option></select></label>
+        <label>Izoh (ixtiyoriy)<textarea name="comment" maxlength="500" rows="2" placeholder="Qo‘shimcha istaklaringiz..."></textarea></label>
+        <div class="checkout-total"><span>To‘lanadigan summa</span><b id="checkoutTotal">0 so‘m</b></div>
+        <button class="btn btn-primary submit-order" type="submit" id="submitOrder">Buyurtmani yuborish <span>↗</span></button><p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
 </body>
 </html>
